@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
     const year = new Date().getFullYear();
 
@@ -15,9 +17,11 @@ export default function Footer() {
                     <div>
                         <h4 className="mb-4 font-bold uppercase tracking-wider">링크</h4>
                         <ul className="space-y-2 text-sm opacity-80">
-                            <li><a href="/" className="hover:text-[#E8941A]">홈</a></li>
-                            <li><a href="/policies" className="hover:text-[#E8941A]">정책</a></li>
-                            <li><a href="/news" className="hover:text-[#E8941A]">뉴스 소식</a></li>
+                            <li><Link href="/profile" className="transition-colors duration-300 hover:text-[#E8941A]">프로필</Link></li>
+                            <li><Link href="/policies" className="transition-colors duration-300 hover:text-[#E8941A]">정책</Link></li>
+                            <li><Link href="/news" className="transition-colors duration-300 hover:text-[#E8941A]">뉴스</Link></li>
+                            <li><Link href="/contact" className="transition-colors duration-300 hover:text-[#E8941A]">소통</Link></li>
+                            <li><Link href="/notifications" className="transition-colors duration-300 hover:text-[#E8941A]">알림</Link></li>
                         </ul>
                     </div>
                     <div>

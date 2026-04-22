@@ -8,10 +8,11 @@ export default function Header() {
                     <span className="text-2xl font-black tracking-tight text-[#1B3A6B]">김태성과 신안</span>
                 </Link>
                 <nav className="hidden space-x-8 md:flex">
-                    <Link href="/" className="text-sm font-bold text-gray-700 hover:text-[#1B3A6B]">홈</Link>
-                    <Link href="/policies" className="text-sm font-bold text-gray-700 hover:text-[#1B3A6B]">정책</Link>
-                    <Link href="/news" className="text-sm font-bold text-gray-700 hover:text-[#1B3A6B]">뉴스</Link>
-                    <Link href="/contact" className="text-sm font-bold text-gray-700 hover:text-[#1B3A6B]">연락처</Link>
+                    <Link href="/profile" className="text-sm font-bold text-gray-700 transition-colors hover:text-[#E8941A]">프로필</Link>
+                    <Link href="/policies" className="text-sm font-bold text-gray-700 transition-colors hover:text-[#E8941A]">정책</Link>
+                    <Link href="/news" className="text-sm font-bold text-gray-700 transition-colors hover:text-[#E8941A]">뉴스</Link>
+                    <Link href="/contact" className="text-sm font-bold text-gray-700 transition-colors hover:text-[#E8941A]">소통</Link>
+                    <Link href="/notifications" className="text-sm font-bold text-gray-700 transition-colors hover:text-[#E8941A]">알림</Link>
                 </nav>
                 <div className="flex items-center">
                     <Link
