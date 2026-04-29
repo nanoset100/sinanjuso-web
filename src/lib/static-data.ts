@@ -1,101 +1,230 @@
-// Flutter 앱 소스코드에서 추출한 하드코딩 데이터
+// ============================================================
+// 김태성과 신안 — 공식 데이터 (공약집 + 조국혁신당 전략 기반)
+// 마지막 업데이트: 2026.04.29
+// ============================================================
+
+// D-Day 자동 계산 (매번 접속 시 최신값)
+function calcDDay(): number {
+  const electionDate = new Date('2026-06-03T00:00:00+09:00');
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const diff = Math.ceil((electionDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+  return Math.max(0, diff);
+}
+
+// ────────────────────────────────────────────────────────────
+// 후보자 프로필
+// ────────────────────────────────────────────────────────────
 export const CANDIDATE_PROFILE = {
   name: '김태성',
   title: '신안군수 예비후보',
+  party: '조국혁신당',
   district: '전라남도 신안군',
   badge: '신안군수 예비후보',
-  slogan: '소득 늘리고, 일자리 만들고,\n약속지키는 군수',
+
+  // 공식 슬로건 (공약집)
+  slogan: '소득 늘리고, 일자리 만들고,\n약속 지키는 군수',
+
+  // 캐치플레이즈 (후보 직접 제시)
+  catchphrase: '줄 세우기보다\n일로 줄을 세웁니다',
+
+  // 캠페인 프레임 (조국혁신당 전략)
+  campaignFrame: '장군의 훈장을 내려놓고, 군민의 장화를 신다',
+  campaignName: 'Operation: Heart-to-Heart',
+
+  // 연합 메시지 (후보 직접 제시)
+  allianceMessage:
+    '조국혁신당을 중심으로, 양심 있는 민주당 인사들, 시민단체, 그리고 존경하고 사랑하는 신안 군민과 함께합니다.',
+
+  // 비전 (공약집)
+  vision: '청렴이 기준이 되고, 군민이 중심이 되는 행정',
+
+  // 핵심 가치 (공약집)
+  coreValues: ['주민소득', '주민참여', '지속가능'],
+
   career: [
-    { year: '2024', title: '신안군수 예비후보 등록' },
+    { year: '2026', title: '조국혁신당 신안군수 예비후보 등록' },
+    { year: '2024', title: '신안군수 예비후보 최초 등록' },
     { year: '2022', title: '前 신안군 지역발전위원회 위원장' },
     { year: '2020', title: '신안 관광진흥협의회 공동대표' },
     { year: '2018', title: '전라남도 도서지역 발전 자문위원' },
     { year: '2015', title: '신안 어촌계 자문위원', subtitle: '도서 지역 어업인 권익 보호' },
     { year: '2010', title: '지역 관광 위원회 부위원장' },
   ],
+
   snsLinks: [
+    { label: 'YouTube', emoji: '▶️', bgColor: '#FFEBEE', url: 'https://www.youtube.com/@김태성TV' },
     { label: 'Facebook', emoji: '📘', bgColor: '#E3F2FD', url: 'https://www.facebook.com' },
     { label: 'Instagram', emoji: '📸', bgColor: '#FCE4EC', url: 'https://www.instagram.com' },
-    { label: 'YouTube', emoji: '▶️', bgColor: '#FFEBEE', url: 'https://www.youtube.com' },
     { label: '카카오톡', emoji: '💬', bgColor: '#FFF9C4', url: 'https://pf.kakao.com/_placeholder' },
-  ]
+  ],
 };
 
-export const POLICIES = [
+// ────────────────────────────────────────────────────────────
+// 8대 핵심 공약 (생활밀착형 — 조국혁신당 전략 + 후보 직접 제시)
+// ────────────────────────────────────────────────────────────
+export const KEY_POLICIES_8 = [
   {
-    id: 'tourism',
-    emoji: '🏝',
-    title: '관광 비전',
-    subtitle: '섬 전체가 하나의 작품이 됩니다',
-    cardColor: '#EBF4FF',
-    iconBgColor: '#E3F2FD',
-    background: '신안군은 1,025개의 섬으로 이루어진 대한민국 최대 도서 지역입니다. 각 섬의 고유한 자연·문화 자원을 체계적으로 관광 콘텐츠화하여 지역 경제를 활성화하고, 주민의 삶 자체가 살아있는 관광 자원이 되는 선순환 구조를 만들겠습니다.',
-    goals: '섬별 특화 콘텐츠 개발로 관광객 30% 증가, 주민 관광업 참여 소득 확대, 신안 통합 관광 패스로 방문객 체류 기간 연장.',
-    roadmap: [
-      { step: 1, title: '섬별 특화 콘텐츠 개발', subtitle: '자연·문화·생활 기반 차별화' },
-      { step: 2, title: '생활이 관광이 되는 구조', subtitle: '주민 삶 → 관광 자원 확장' },
-      { step: 3, title: '신안 전체 관광 네트워크', subtitle: '섬 접근성·통합 관광 경험 제공' },
-    ]
+    id: 'esg',
+    emoji: '🌱',
+    number: '01',
+    title: 'ESG 민관협의체 설립',
+    hook: '대기업 자본을 신안으로',
+    description:
+      '신안의 풍력·태양광·갯벌·천일염을 ESG 투자자산으로 전환, 대기업 자본을 유치하고 군 재정자립도를 획기적으로 개선합니다.',
+    badgeColor: '#E8F5E9',
+    badgeTextColor: '#2E7D32',
   },
   {
-    id: 'economy',
-    emoji: '💰',
-    title: '경제 정책',
-    subtitle: '군민의 지갑이 두꺼워지는 신안',
-    cardColor: '#FFFCE8',
-    iconBgColor: '#FFF9C4',
-    background: '신안 어민과 농민이 생산한 농수산물이 제 값을 받을 수 있도록 유통구조를 근본적으로 개선합니다. 관광·에너지 사업의 수익이 군민에게 직접 돌아오는 주민 참여 수익 공유 구조를 만들겠습니다.',
-    goals: '농수산물 직거래 비율 40% 확대, 관광·에너지 사업 주민 수익 배분제 도입, 군민 평균 소득 연 200만 원 이상 실질 증가.',
-    roadmap: [
-      { step: 1, title: '농수산물 직거래 플랫폼 구축', subtitle: '중간 유통 단계 축소' },
-      { step: 2, title: '관광 수익 주민 환원', subtitle: '관광 사업 이익의 30% 지역 기금화' },
-      { step: 3, title: '에너지 사업 주민 참여', subtitle: '태양광·풍력 수익 공유 조합 설립' },
-    ]
+    id: 'house',
+    emoji: '🏠',
+    number: '02',
+    title: '0원 하우스 프로젝트',
+    hook: '인구를 탈환합니다',
+    description:
+      '빈집을 리모델링해 5년 무상 거주 조건으로 이주민에게 제공, IT·디자인·작가 등 전문가 워케이션 마을을 조성합니다.',
+    badgeColor: '#E3F2FD',
+    badgeTextColor: '#1565C0',
   },
   {
-    id: 'public_service',
+    id: 'delivery',
+    emoji: '📦',
+    number: '03',
+    title: '섬 택배비 0원',
+    hook: '추가 택배비 전액 군비 지원',
+    description:
+      '섬 지역 주민이 부담하는 추가 택배비를 군비로 전액 지원합니다. 육지와 같은 물류 권리를 보장합니다.',
+    badgeColor: '#FFF3E0',
+    badgeTextColor: '#E65100',
+  },
+  {
+    id: 'salt',
+    emoji: '🧂',
+    number: '04',
+    title: '천일염 1만원 사수',
+    hook: '소금값 안정화 — 소득 수호',
+    description:
+      '현재 7,000원대로 하락한 천일염 가격을 10,000~14,000원 수준으로 안정화합니다. 전국 절임배추·김치 시장에 신안 브랜드를 확산합니다.',
+    badgeColor: '#E8EAF6',
+    badgeTextColor: '#283593',
+  },
+  {
+    id: 'taxi',
+    emoji: '🚕',
+    number: '05',
+    title: '1,004원 효도 택시',
+    hook: '어르신 이동권 완전 보장',
+    description:
+      '고령자·장애인 등 교통약자가 병원·관공서·복지시설을 단돈 1,004원으로 이용할 수 있는 맞춤형 동행 교통서비스를 구축합니다.',
+    badgeColor: '#FCE4EC',
+    badgeTextColor: '#880E4F',
+  },
+  {
+    id: 'transparent',
     emoji: '🏛',
-    title: '공직자 3대 공약',
-    subtitle: '공정하고 존중받는 행정',
-    cardColor: '#F0EEFF',
-    iconBgColor: '#E8EAF6',
-    background: '공무원이 측근 개입 없이 소신 있게 일할 수 있는 환경을 만듭니다. 직원 복지를 우선 강화하고, 폭언·인격 모독이 없는 조직 문화를 정착시키겠습니다.',
-    goals: '공직자 업무 만족도 70% 이상, 부당 지시·인격 모독 사례 Zero, 성과 중심 공정 인사로 유능한 인재 육성.',
-    roadmap: [
-      { step: 1, title: '공무원 권한 회복', subtitle: '측근 개입 차단, 정책 중심 민원 처리' },
-      { step: 2, title: '공직자 존중 문화 정착', subtitle: '직원 복지 강화, 폭언 금지 제도화' },
-      { step: 3, title: '공정 인사 원칙 수립', subtitle: '다면평가 도입, 성과 중심 인사' },
-    ]
+    number: '06',
+    title: '투명 청렴 행정',
+    hook: '신뢰를 되찾겠습니다',
+    description:
+      '공무원 권한 회복, 줄 세우기 인사 근절, 성과 중심 공정 인사. 측근 개입을 차단하고 공직자가 소신 있게 일하는 신안을 만듭니다.',
+    badgeColor: '#F3E5F5',
+    badgeTextColor: '#4A148C',
   },
   {
-    id: 'open_government',
-    emoji: '🤝',
-    title: '열린 군정',
-    subtitle: '군민이 주인인 신안',
-    cardColor: '#EDFBF0',
-    iconBgColor: '#E8F5E9',
-    background: '정책 계획부터 평가까지 모든 단계에 군민이 직접 참여하는 진정한 민주행정을 실현합니다. 아이디어 공모와 온라인 의견 수렴으로 현장의 목소리를 정책에 반영하겠습니다.',
-    goals: '군민 정책 제안 반영률 50% 이상, 분기별 공개 행정 보고회 개최, 온라인 소통 창구 24시간 운영.',
-    roadmap: [
-      { step: 1, title: '계획 단계 군민 참여', subtitle: '아이디어 공모·온라인 의견 수렴' },
-      { step: 2, title: '실행·평가 참여 확대', subtitle: '중간 점검 공개 보고회 운영' },
-      { step: 3, title: '열린 정보 공개', subtitle: '행정 정보 전면 공개, 소통 창구 상시화' },
-    ]
+    id: 'farming',
+    emoji: '🌾',
+    number: '07',
+    title: '농어촌 르네상스',
+    hook: '농수산 예산 30%로 확대',
+    description:
+      '농림수산업 예산을 전체의 30% 수준으로 확대하고, 자부담 비율을 현행 40~50%에서 30% 이하로 완화합니다. 제값받는 신안 농어업을 실현합니다.',
+    badgeColor: '#E8F5E9',
+    badgeTextColor: '#1B5E20',
   },
   {
     id: 'zero_complaint',
     emoji: '📞',
-    title: '주민불편 ZERO',
-    subtitle: '불편은 줄이고, 응답은 빠르게',
-    cardColor: '#FFF5EA',
-    iconBgColor: '#FFF3E0',
-    background: '연중무휴 24시간 민원 응답 시스템을 구축해 어떤 불편도 신속하게 해결합니다. 어르신 병원 동행, 전기·수도 수리 지원 등 생활 밀착형 서비스를 제공하겠습니다.',
-    goals: '민원 접수 후 24시간 내 초기 답변 100%, 긴급 민원 2시간 내 현장 출동, 통합 민원 플랫폼 구축으로 원스톱 처리.',
+    number: '08',
+    title: '주민 불편 ZERO',
+    hook: '365일 24시간 즉시 대응',
+    description:
+      '전화·문자·카카오톡·앱 원스톱 민원 접수, 24시간 처리 콜센터 운영. 긴급 민원은 2시간 내 현장 출동합니다.',
+    badgeColor: '#FFF8E1',
+    badgeTextColor: '#E65100',
+  },
+];
+
+// ────────────────────────────────────────────────────────────
+// 5대 공약 (공식 — 공약집 기반, 상세 페이지용)
+// ────────────────────────────────────────────────────────────
+export const POLICIES = [
+  {
+    id: 'energy',
+    emoji: '⚡',
+    title: '에너지·경제 도약',
+    subtitle: '군민이 직접 수익을 체감하는 신안',
+    cardColor: '#EBF4FF',
+    iconBgColor: '#E3F2FD',
+    background:
+      '신안군이 보유한 풍력·태양광 등 풍부한 재생에너지 자원을 기반으로 주민이 직접 참여하고 혜택을 체감할 수 있는 이익공유 구조를 구축합니다. RE100 스마트그린 국가산업단지를 조성하여 양질의 일자리와 인구 유입 기반을 마련합니다.',
+    goals:
+      '주민 직접투자 참여율 10% 이상 확대, RE100 국가산업단지 조성으로 일자리 창출, 에너지·해양·항공 복합 물류거점 구축.',
     roadmap: [
-      { step: 1, title: '24시간 통합 민원 접수', subtitle: '전화·문자·카카오·앱 원스톱' },
-      { step: 2, title: '생활 밀착형 지원 서비스', subtitle: '어르신 병원 예약·이동 지원' },
-      { step: 3, title: '즉각적인 현장 대응', subtitle: '읍·면 단위 전담 인력 배치' },
-    ]
+      { step: 1, title: '주민 이익공유 기반 구축', subtitle: '지역형 펀드·직접 PPA 해상풍력' },
+      { step: 2, title: 'RE100 국가산업단지 조성', subtitle: '재생에너지 100% 자족형 산업 생태계' },
+      { step: 3, title: '스마트 신도시 조성', subtitle: '직주근접형 주거·생활·복지 복합도시' },
+    ],
+  },
+  {
+    id: 'tourism',
+    emoji: '🏝',
+    title: '체류형 관광·문화',
+    subtitle: '섬 전체가 살아있는 현장이 됩니다',
+    cardColor: '#FFFCE8',
+    iconBgColor: '#FFF9C4',
+    background:
+      '유네스코 갯벌, 천일염, 1,025개의 섬을 활용한 고품격 체류형 관광산업을 육성합니다. 박제된 미술관이 아닌 주민의 삶이 전시가 되는 살아있는 신안을 만들겠습니다.',
+    goals:
+      '관광객 체류 시간 증가로 지역 상권 활성화, 주민 참여형 관광산업으로 소득 증대, 신안 14 플랫폼 구축으로 통합 문화관광 경쟁력 강화.',
+    roadmap: [
+      { step: 1, title: '유네스코·해양자원 체류형 관광', subtitle: '갯벌·천일염·해양경관 활용' },
+      { step: 2, title: '주민수익형 마을관광 확대', subtitle: '가정식 숙박·향토밥상·체험 프로그램' },
+      { step: 3, title: '신안 14 플랫폼 조성', subtitle: '14개 읍·면 통합 문화관광 네트워크' },
+    ],
+  },
+  {
+    id: 'transport',
+    emoji: '⛵',
+    title: '교통·접근성 혁신',
+    subtitle: '섬과 섬을 잇는 연결의 신안',
+    cardColor: '#EDFBF0',
+    iconBgColor: '#E8F5E9',
+    background:
+      '섬 지역의 접근성과 주민 이동권을 보장하여 지역 간 격차를 해소합니다. 자라-장산 연도교 조기 완공, 위그선 기반 친환경 해상교통, 1004 광역버스 구축으로 신안 전체를 연결합니다.',
+    goals:
+      '주요 연도교 조기 완공으로 도서 간 생활권 연결, 위그선 해상교통으로 흑산·홍도 접근성 개선, 무안공항 연계 광역버스 운행.',
+    roadmap: [
+      { step: 1, title: '연륙·연도교 조기 완공', subtitle: '자라-장산, 추포-비금 연도교' },
+      { step: 2, title: '위그선 해상교통 구축', subtitle: '흑산·홍도 친환경 교통 대안' },
+      { step: 3, title: '1004 광역교통버스', subtitle: '무안공항·KTX 연계 광역 대중교통' },
+    ],
+  },
+  {
+    id: 'farming',
+    emoji: '🌾',
+    title: '농어촌 르네상스',
+    subtitle: '제값받는 신안 농어업을 실현합니다',
+    cardColor: '#F0EEFF',
+    iconBgColor: '#E8EAF6',
+    background:
+      '신안군 인구 70%가 농어업에 종사하지만 실질 지원 예산은 17%에 불과합니다. 농림수산업 예산을 30%로 확대하고 자부담 비율을 30% 이하로 완화, 천일염·김·전복 산업의 경쟁력을 높이겠습니다.',
+    goals:
+      '농림수산업 예산 전체의 30% 수준 확대, 천일염 가격 10,000~14,000원 안정화, 김산업 클러스터 조성으로 세계 시장 선도.',
+    roadmap: [
+      { step: 1, title: '예산 확대·자부담 완화', subtitle: '농수산 지원 자부담 30% 이하' },
+      { step: 2, title: '프리미엄 브랜드·유통 혁신', subtitle: '천일염·김·전복 세계화' },
+      { step: 3, title: '스마트 농어업 전환', subtitle: 'IoT·AI 기반 양식·스마트팜 확산' },
+    ],
   },
   {
     id: 'welfare',
@@ -104,22 +233,245 @@ export const POLICIES = [
     subtitle: '모든 군민이 편안한 신안',
     cardColor: '#FFF0F5',
     iconBgColor: '#FCE4EC',
-    background: '주거·의료·교육·돌봄이 통합된 복지 시스템으로 모든 세대가 신안에서 행복하게 살 수 있는 환경을 만듭니다. 배리어프리 생활환경 확대로 고령자와 장애인의 이동권을 보장하겠습니다.',
-    goals: '돌봄 서비스 이용 노인 1,000명 추가, 농촌형 주거단지 조성 500세대, 방과 후 돌봄 시설 모든 읍·면 설치.',
+    background:
+      '전체 인구의 36%가 65세 이상인 초고령 지역 신안. 마을 돌봄센터 기반 통합돌봄체계, AI 기반 공공의료 강화, 배리어프리 생활환경 확대로 모든 군민이 행복하게 살 수 있는 환경을 만듭니다.',
+    goals:
+      '돌봄 서비스 이용 노인 1,000명 추가, 농촌형 주거단지 조성 500세대, 365일 24시간 주민불편 콜센터 운영.',
     roadmap: [
-      { step: 1, title: '주거·돌봄 통합 서비스', subtitle: '농촌형 주거단지·실버타운 운영' },
-      { step: 2, title: '의료·이동권 보장', subtitle: '교통약자 동행 서비스·의료 동행' },
-      { step: 3, title: '교육·안전 환경 구축', subtitle: '배리어프리 환경·방과 후 돌봄' },
-    ]
-  }
+      { step: 1, title: '통합돌봄체계 구축', subtitle: '마을 돌봄센터·AI 의료·병원동행' },
+      { step: 2, title: '주거·이동권 보장', subtitle: '실버타운·1,004원 효도 택시' },
+      { step: 3, title: '아이 키우기 좋은 신안', subtitle: '출산·양육·돌봄 통합 지원' },
+    ],
+  },
 ];
 
+// ────────────────────────────────────────────────────────────
+// 공직자 중심 군정 운영 3대 약속 (공약집)
+// ────────────────────────────────────────────────────────────
+export const OFFICIAL_PLEDGE = [
+  {
+    id: 'authority',
+    emoji: '🛡',
+    title: '공무원 권한 회복',
+    items: [
+      '외부·측근 개입 차단',
+      '정책·예산·행정의 공직자 중심 운영',
+      '민원 처리의 실질적 권한 보장',
+    ],
+    color: '#E3F2FD',
+  },
+  {
+    id: 'respect',
+    emoji: '🤝',
+    title: '공직자 존중 문화',
+    items: [
+      '공직자를 군정의 동반자로 인식',
+      '직원 복지 우선 강화',
+      '폭언·언어폭력 없는 건강한 조직문화',
+    ],
+    color: '#E8F5E9',
+  },
+  {
+    id: 'fairness',
+    emoji: '⚖️',
+    title: '공정한 인사체계',
+    items: [
+      '줄서기·소문 중심 인사 관행 근절',
+      '성과 중심의 공정 인사 운영',
+      '도서 근무 가산점 부여 + 다면평가 도입',
+    ],
+    color: '#F3E5F5',
+  },
+];
+
+// ────────────────────────────────────────────────────────────
+// 지역별 공약 — 14개 읍·면 (공약집 기반)
+// ────────────────────────────────────────────────────────────
+export const REGIONAL_POLICIES = [
+  {
+    id: 'jido',
+    name: '지도읍',
+    emoji: '🏘',
+    color: '#EBF4FF',
+    pledges: [
+      { title: '무안–지도 양조다리 하천 복원', category: '교통' },
+      { title: '선도–병풍도–송도 철부선 운행 추진', category: '교통' },
+      { title: '태천도로 2차선 확장', category: '교통' },
+      { title: '젓갈타운·지도전통시장 활성화', category: '경제' },
+      { title: '파크골프장 조성', category: '복지' },
+      { title: '죽곡 마을회관 고급화 및 하수도 정비', category: '생활' },
+    ],
+  },
+  {
+    id: 'apae',
+    name: '압해읍',
+    emoji: '🏭',
+    color: '#FFFCE8',
+    pledges: [
+      { title: 'RE100 스마트그린 국가산업단지 조성', category: '경제' },
+      { title: '에너지·해양·항공 복합 물류거점 구축', category: '경제' },
+      { title: '직주근접형 배후 스마트 신도시 조성', category: '주거' },
+      { title: '청년창업 공공임대형 지식산업센터 건립', category: '청년' },
+      { title: '마을 돌봄센터 조성', category: '복지' },
+      { title: '복룡↔목포 직행 택시 운행', category: '교통' },
+    ],
+  },
+  {
+    id: 'jeungdo',
+    name: '증도면',
+    emoji: '🌿',
+    color: '#EDFBF0',
+    pledges: [
+      { title: '갯벌 활용 생태·체험형 관광 콘텐츠 개발', category: '관광' },
+      { title: '마을공동기업형 마늘 가공공장 설립', category: '경제' },
+      { title: '화도 선착장 조성', category: '교통' },
+      { title: '우전리 노인회관 신축', category: '복지' },
+      { title: '갯벌관광과 지역특화산업 연계 활성화', category: '관광' },
+    ],
+  },
+  {
+    id: 'imja',
+    name: '임자면',
+    emoji: '🏖',
+    color: '#FFF0F5',
+    pledges: [
+      { title: '대광해수욕장↔서울 고속버스 노선 재개통', category: '교통' },
+      { title: '대광해수욕장 내 어린이 풀장 조성', category: '관광' },
+      { title: '재원도 둘레길 포장 및 보행환경 개선', category: '관광' },
+      { title: '체류형 관광 인프라 연계 활성화', category: '관광' },
+    ],
+  },
+  {
+    id: 'jaun',
+    name: '자은면',
+    emoji: '🌊',
+    color: '#E8EAF6',
+    pledges: [
+      { title: '해안도로 개설', category: '교통' },
+      { title: '은암대교–고교선착장 간 국도 승격 추진', category: '교통' },
+      { title: '119 구급차 자은면 상주 배치', category: '의료' },
+      { title: '물리치료실 갖춘 의원급 병원 조성', category: '의료' },
+    ],
+  },
+  {
+    id: 'bigeum',
+    name: '비금면',
+    emoji: '🏝',
+    color: '#FFF3E0',
+    pledges: [
+      { title: '레드비치 관광사업 완성', category: '관광' },
+      { title: '제2상수원 설치 및 배관 교체', category: '생활' },
+      { title: '시금치 등 농산물 수출 지원부서 신설', category: '경제' },
+      { title: '해수면 상승 대비 방파제 설치·보수', category: '재해' },
+    ],
+  },
+  {
+    id: 'docho',
+    name: '도초면',
+    emoji: '🌾',
+    color: '#E8F5E9',
+    pledges: [
+      { title: '그린스마트학교 사업 재정비', category: '교육' },
+      { title: '배수펌프장 설치로 염전 배수 개선', category: '경제' },
+      { title: '죽도 선착장 확장', category: '교통' },
+      { title: '우이도 대합실 및 쉼터 설치', category: '교통' },
+      { title: '노후 수도관 정비', category: '생활' },
+    ],
+  },
+  {
+    id: 'heuksan',
+    name: '흑산면',
+    emoji: '🚢',
+    color: '#F3E5F5',
+    pledges: [
+      { title: '흑산공항 대응 위그선 취항', category: '교통' },
+      { title: '가거도 여객선 1일 단위 운행', category: '교통' },
+      { title: '다물도 여객선 매일 운행', category: '교통' },
+      { title: '여객선 공영제 추진', category: '교통' },
+      { title: '홍도 국립공원 데크 및 둘레길 확충', category: '관광' },
+      { title: '크루즈 여객선 흑산도 경유 추진', category: '관광' },
+    ],
+  },
+  {
+    id: 'haui',
+    name: '하의면',
+    emoji: '🌅',
+    color: '#FFF8E1',
+    pledges: [
+      { title: '문화숙박 연계 1박 2일 관광프로그램 개발', category: '관광' },
+      { title: '장병도 교통 여건 보완', category: '교통' },
+      { title: '체류형 관광 숙박·문화·이동 연계', category: '관광' },
+    ],
+  },
+  {
+    id: 'sinui',
+    name: '신의면',
+    emoji: '⛳',
+    color: '#E8F5E9',
+    pledges: [
+      { title: '인도어 골프연습장 또는 스크린 골프장 조성', category: '복지' },
+      { title: '실내형 주민 여가공간 확보', category: '복지' },
+      { title: '중장년·고령층 친화형 생활체육 활성화', category: '복지' },
+    ],
+  },
+  {
+    id: 'jangsan',
+    name: '장산면',
+    emoji: '🛣',
+    color: '#EBF4FF',
+    pledges: [
+      { title: '안좌–장산 간 도로 조기 완공', category: '교통' },
+      { title: '안좌–압해 간 교량·도로 종합 대책 마련', category: '교통' },
+      { title: '오음리 주도로 확장', category: '교통' },
+      { title: '퇴비·비닐 등 농자재 보조사업 확대', category: '경제' },
+    ],
+  },
+  {
+    id: 'anjwa',
+    name: '안좌면',
+    emoji: '💜',
+    color: '#F3E5F5',
+    pledges: [
+      { title: '문화예술복지센터 조성 (김치공장 활용)', category: '문화' },
+      { title: '퍼플교 연계 숙박·음식거리 조성', category: '관광' },
+      { title: '노인 건강증진 족욕시설 설치', category: '복지' },
+      { title: '가로등 및 전등 보수', category: '생활' },
+    ],
+  },
+  {
+    id: 'palgeum',
+    name: '팔금면',
+    emoji: '🏌',
+    color: '#FFFCE8',
+    pledges: [
+      { title: '대규모 파크골프장 조성', category: '복지' },
+      { title: '주요 도로 확장 및 교통여건 개선', category: '교통' },
+      { title: '당고리 회관 앞 주차장 조성', category: '생활' },
+      { title: '당고리 회관 앞 배수로 조성', category: '재해' },
+    ],
+  },
+  {
+    id: 'amtae',
+    name: '암태면',
+    emoji: '🌺',
+    color: '#FFF0F5',
+    pledges: [
+      { title: '추포–비금 연륙·연도교 조기 완공', category: '교통' },
+      { title: '농업생산기반 장비·시설 자부담 완화', category: '경제' },
+      { title: '고령 농어업인 경영이양 + 청년 정착 패키지', category: '청년' },
+    ],
+  },
+];
+
+// ────────────────────────────────────────────────────────────
+// 뉴스
+// ────────────────────────────────────────────────────────────
 export const NEWS_ITEMS = [
   {
     id: 'real_4',
     title: '조국혁신당, 신안군수 후보 선출 경선 실시되나…김태성·정광호 후보, 입당 선언',
     source: '프레시안',
-    publishedAt: '3월 30일',
+    publishedAt: '2026년 3월 30일',
     thumbnailEmoji: '🗳',
     url: 'https://www.pressian.com/pages/articles/2026033013343735020',
     category: '보도자료',
@@ -129,7 +481,7 @@ export const NEWS_ITEMS = [
     id: 'real_2',
     title: '김태성 신안군수 예비후보, 민주당 탈당 선언',
     source: '아시아경제',
-    publishedAt: '3월 19일',
+    publishedAt: '2026년 3월 19일',
     thumbnailEmoji: '📢',
     url: 'https://www.asiae.co.kr/article/2026031911523780271',
     category: '보도자료',
@@ -139,7 +491,7 @@ export const NEWS_ITEMS = [
     id: 'real_1',
     title: '김태성, 신안군수 출마 선언 "청렴·공정의 군민 주인 시대 열겠다"',
     source: '뉴스1',
-    publishedAt: '1월 22일',
+    publishedAt: '2026년 1월 22일',
     thumbnailEmoji: '🏛',
     url: 'https://www.news1.kr/local/gwangju-jeonnam/6047866',
     category: '보도자료',
@@ -149,7 +501,7 @@ export const NEWS_ITEMS = [
     id: 'real_3',
     title: '김태성 신안군수 예비후보, 민주당 심사 재심 요청',
     source: '무등일보',
-    publishedAt: '12월 23일',
+    publishedAt: '2025년 12월 23일',
     thumbnailEmoji: '⚖️',
     url: 'https://m.mdilbo.com/detail/0kIA7d/751464',
     category: '보도자료',
@@ -157,54 +509,63 @@ export const NEWS_ITEMS = [
   },
 ];
 
+// ────────────────────────────────────────────────────────────
+// 캠프 연락처
+// ────────────────────────────────────────────────────────────
 export const CAMP_CONTACT = {
   contacts: [
-    { label: '전화', value: '061-XXX-XXXX', url: 'tel:06112345678', iconBgColor: '#E3F2FD' },
+    { label: '전화', value: '061-XXX-XXXX', url: 'tel:06100000000', iconBgColor: '#E3F2FD' },
     { label: '이메일', value: 'kimts@sinanjuso.com', url: 'mailto:kimts@sinanjuso.com', iconBgColor: '#E8F5E9' },
     { label: '카카오톡 채널', value: '@김태성신안군수', url: 'https://pf.kakao.com/_placeholder', iconBgColor: '#FFF9C4' },
   ],
   address: '전라남도 신안군 안좌면 김태성 선거캠프',
   addressFull: '전라남도 신안군 안좌면 읍내리 — 캠프 사무소',
   lat: 34.8353,
-  lng: 126.1833
+  lng: 126.1833,
 };
 
+// ────────────────────────────────────────────────────────────
+// 알림
+// ────────────────────────────────────────────────────────────
 export const NOTIFICATIONS = [
   {
     id: 'n_001',
-    title: '📣 4월 18일 압해도 유세 일정 안내',
-    body: '오후 2시 압해읍 광장에서 유세 행사가 열립니다.',
-    topic: '유세 일정 알림',
-    date: '4월 15일'
+    title: '📣 조국혁신당 신안군수 후보 공식 선출',
+    body: '김태성 후보가 조국혁신당 신안군수 예비후보로 공식 활동을 시작합니다.',
+    topic: '주요 소식',
+    date: '4월 29일',
   },
   {
     id: 'n_002',
-    title: '📋 농어업 공약 발표',
-    body: '친환경 수산물 직거래 지원 확대 등 3개 공약이 추가되었습니다.',
+    title: '📋 8대 핵심 공약 전문 공개',
+    body: '택배비 0원, 천일염 1만원 사수, 1,004원 효도 택시 등 8대 생활공약을 확인하세요.',
     topic: '정책 발표 알림',
-    date: '4월 14일'
+    date: '4월 28일',
   },
   {
     id: 'n_003',
-    title: '📰 무안일보 인터뷰 기사',
-    body: '"섬 주민이 행복한 신안" — 김태성 후보 정책 인터뷰 게재',
-    topic: '뉴스 알림',
-    date: '4월 13일'
+    title: '🎬 김태성 TV 유튜브 숏폼 오픈',
+    body: '5월 집중 콘텐츠 캘린더 가동! 유튜브 채널을 구독해 주세요.',
+    topic: '미디어 알림',
+    date: '4월 27일',
   },
   {
     id: 'n_004',
-    title: '🗳️ D-48 선거일이 48일 남았습니다',
-    body: '6월 3일 꼭 투표해 주세요!',
+    title: `🗳️ D-${calcDDay()} 선거일이 다가옵니다`,
+    body: '2026년 6월 3일, 신안의 미래를 결정할 소중한 한 표를 부탁드립니다.',
     topic: '선거일 알림',
-    date: '4월 16일'
-  }
+    date: '4월 29일',
+  },
 ];
 
+// ────────────────────────────────────────────────────────────
+// 선거 정보
+// ────────────────────────────────────────────────────────────
 export const ELECTION_INFO = {
   title: '제8회 전국동시지방선거',
   dateString: '2026년 6월 3일 (수)',
-  dDay: 42,
+  dDay: calcDDay(),
   slogan: '투표는 민주주의의 가장 중요한 참여입니다 🗳️',
   type: '신안군수 선거',
-  district: '전라남도 신안군'
+  district: '전라남도 신안군',
 };
