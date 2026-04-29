@@ -15,6 +15,7 @@ export default async function PolicyDetailPage({
   const policy = KEY_POLICIES_8.find((p) => p.id === id);
   if (!policy) notFound();
 
+  const p = policy as typeof policy & { counter?: string[] };
   const idx = KEY_POLICIES_8.findIndex((p) => p.id === id);
   const prev = idx > 0 ? KEY_POLICIES_8[idx - 1] : null;
   const next = idx < KEY_POLICIES_8.length - 1 ? KEY_POLICIES_8[idx + 1] : null;
@@ -22,81 +23,93 @@ export default async function PolicyDetailPage({
   return (
     <div className="min-h-screen bg-gray-50 pb-24">
       {/* 상단 배너 */}
-      <div className="w-full py-16 px-4" style={{ backgroundColor: policy.badgeColor }}>
+      <div className="w-full py-16 px-4" style={{ backgroundColor: p.badgeColor }}>
         <div className="max-w-3xl mx-auto text-center">
-          <span className="text-7xl block mb-6">{policy.emoji}</span>
+          <span className="text-7xl block mb-6">{p.emoji}</span>
           <span
             className="text-sm font-black tracking-wider px-4 py-1.5 rounded-full inline-block mb-4"
-            style={{ backgroundColor: policy.badgeTextColor + '20', color: policy.badgeTextColor }}
+            style={{ backgroundColor: p.badgeTextColor + '20', color: p.badgeTextColor }}
           >
-            핵심 공약 {policy.number}
+            핵심 공약 {p.number}
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-[#1B3A6B] mb-4 break-keep leading-tight">
-            {policy.title}
+            {p.title}
           </h1>
-          <p className="text-xl font-bold mt-2" style={{ color: policy.badgeTextColor }}>
-            {policy.hook}
+          <p className="text-xl font-bold mt-2" style={{ color: p.badgeTextColor }}>
+            {p.hook}
           </p>
         </div>
       </div>
 
       <div className="max-w-3xl mx-auto px-4 pt-12 space-y-8">
 
-        {/* 추진 배경 */}
-        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 sm:p-10">
-          <h2 className="text-lg font-black text-[#1B3A6B] mb-4 flex items-center gap-3">
-            <span className="w-1 h-6 bg-[#E8941A] rounded-full inline-block" />
-            추진 배경
-          </h2>
-          <p className="text-gray-700 text-base leading-relaxed break-keep">
-            {policy.background}
-          </p>
-        </div>
-
-        {/* 핵심 목표 */}
+        {/* 추진 전략 */}
         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 sm:p-10">
           <h2 className="text-lg font-black text-[#1B3A6B] mb-5 flex items-center gap-3">
             <span className="w-1 h-6 bg-[#1B3A6B] rounded-full inline-block" />
-            핵심 목표
+            추진 전략(Strategy)
           </h2>
           <ul className="space-y-3">
-            {policy.goals.map((goal: string, i: number) => (
+            {p.goals.map((item: string, i: number) => (
               <li key={i} className="flex items-start gap-3">
                 <span
                   className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-black flex-shrink-0 mt-0.5"
-                  style={{ backgroundColor: policy.badgeTextColor }}
+                  style={{ backgroundColor: p.badgeTextColor }}
                 >
                   {i + 1}
                 </span>
-                <span className="text-gray-700 text-base break-keep">{goal}</span>
+                <span className="text-gray-700 text-base break-keep">{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* 추진 로드맵 */}
+        {/* 실행 방법 */}
         <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 sm:p-10">
-          <h2 className="text-lg font-black text-[#1B3A6B] mb-6 flex items-center gap-3">
+          <h2 className="text-lg font-black text-[#1B3A6B] mb-5 flex items-center gap-3">
             <span className="w-1 h-6 bg-[#E8941A] rounded-full inline-block" />
-            추진 로드맵
+            실행 방법(Execution)
           </h2>
-          <div className="space-y-4">
-            {policy.roadmap.map((r: { step: number; title: string; desc: string }) => (
-              <div key={r.step} className="flex gap-4 items-start">
-                <div
-                  className="w-10 h-10 rounded-2xl flex items-center justify-center text-white font-black text-sm flex-shrink-0"
-                  style={{ backgroundColor: policy.badgeTextColor }}
-                >
-                  {r.step}단계
-                </div>
-                <div className="flex-1 bg-gray-50 rounded-2xl p-4">
-                  <p className="font-black text-[#1B3A6B] mb-1">{r.title}</p>
-                  <p className="text-sm text-gray-600 break-keep">{r.desc}</p>
-                </div>
-              </div>
+          <ul className="space-y-3">
+            {(p.roadmap as string[]).map((item: string, i: number) => (
+              <li key={i} className="flex items-start gap-3">
+                <span
+                  className="w-2 h-2 rounded-full flex-shrink-0 mt-2"
+                  style={{ backgroundColor: p.badgeTextColor }}
+                />
+                <span className="text-gray-700 text-base break-keep">{item}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
+
+        {/* 대응 전략 */}
+        {p.counter && p.counter.length > 0 && (
+          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 sm:p-10">
+            <h2 className="text-lg font-black text-[#1B3A6B] mb-5 flex items-center gap-3">
+              <span className="w-1 h-6 bg-red-400 rounded-full inline-block" />
+              대응 전략(Counter-Strategy)
+            </h2>
+            <ul className="space-y-4">
+              {p.counter.map((item: string, i: number) => {
+                const parts = item.split('→ 반박:');
+                return (
+                  <li key={i} className="bg-gray-50 rounded-2xl p-4 text-sm text-gray-700 break-keep leading-relaxed">
+                    {parts.length === 2 ? (
+                      <>
+                        <span className="font-bold text-red-600">{parts[0].trim()}</span>
+                        <span className="text-gray-500"> → 반박: </span>
+                        <span>{parts[1].trim()}</span>
+                      </>
+                    ) : (
+                      item
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
 
         {/* 이전 / 다음 */}
         <div className="flex gap-4">
