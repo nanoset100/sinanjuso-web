@@ -1541,7 +1541,7 @@ export const CAMP_CONTACT = {
   contacts: [
     { label: '전화', value: '061-205-4059', url: 'tel:0612054059', iconBgColor: '#E3F2FD' },
     { label: '이메일', value: 'ts9838@hanmail.net', url: 'mailto:ts9838@hanmail.net', iconBgColor: '#E8F5E9' },
-    { label: '카카오톡 채널', value: '@김태성신안군수', url: 'https://pf.kakao.com/_placeholder', iconBgColor: '#FFF9C4' },
+    { label: '카카오톡 채널', value: '@임자면 김태성 소통방', url: '', iconBgColor: '#FFF9C4' },
   ],
   address: '전남 신안군 압해읍 압해로 797-1',
   addressFull: '전남 신안군 압해읍 압해로 797-1 — 김태성 선거캠프',
