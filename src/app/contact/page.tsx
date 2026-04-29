@@ -48,6 +48,14 @@ export default function ContactPage() {
         }
     };
 
+    const getIcon = (label: string) => {
+        if (label === '전화') return '📞';
+        if (label === '이메일') return '✉️';
+        return '💬';
+    };
+
+    const isKakao = (label: string) => label === '카카오톡 채널';
+
     return (
         <div className="bg-gray-50 min-h-screen py-16 px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl bg-white min-h-screen border-x border-gray-100 shadow-sm p-6 sm:p-10">
@@ -59,17 +67,37 @@ export default function ContactPage() {
 
                 {/* 캠프 연락처 */}
                 <div className="mb-12 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                    {CAMP_CONTACT.contacts.map((contact) => (
-                        <a key={contact.label} href={contact.url} target="_blank" rel="noopener noreferrer" className="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm transition-all hover:-translate-y-1 hover:border-[#1B3A6B] block no-underline">
-                            <div className="flex h-12 w-12 items-center justify-center rounded-xl shadow-inner mx-auto mb-3" style={{ backgroundColor: contact.iconBgColor }}>
-                                <span className="text-[#1B3A6B] font-black text-xl">
-                                    {contact.label === '전화' ? '📞' : contact.label === '이메일' ? '✉️' : '💬'}
-                                </span>
+                    {CAMP_CONTACT.contacts.map((contact) =>
+                        isKakao(contact.label) ? (
+                            /* 카카오톡: 클릭 가능 */
+                            <a
+                                key={contact.label}
+                                href={contact.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-[#FEE500] rounded-2xl p-6 border border-yellow-200 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md block no-underline cursor-pointer"
+                            >
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl shadow-inner mx-auto mb-3" style={{ backgroundColor: contact.iconBgColor }}>
+                                    <span className="text-[#1B3A6B] font-black text-xl">{getIcon(contact.label)}</span>
+                                </div>
+                                <div className="text-xs font-black text-gray-600 uppercase tracking-wider mb-1">{contact.label}</div>
+                                <div className="text-sm font-bold text-[#1B3A6B]">{contact.value}</div>
+                                <div className="text-xs text-yellow-700 font-bold mt-2">👆 눌러서 채널 추가</div>
+                            </a>
+                        ) : (
+                            /* 전화·이메일: 표시만 */
+                            <div
+                                key={contact.label}
+                                className="bg-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm block select-all"
+                            >
+                                <div className="flex h-12 w-12 items-center justify-center rounded-xl shadow-inner mx-auto mb-3" style={{ backgroundColor: contact.iconBgColor }}>
+                                    <span className="text-[#1B3A6B] font-black text-xl">{getIcon(contact.label)}</span>
+                                </div>
+                                <div className="text-xs font-black text-gray-500 uppercase tracking-wider mb-1">{contact.label}</div>
+                                <div className="text-sm font-bold text-[#1B3A6B]">{contact.value}</div>
                             </div>
-                            <div className="text-xs font-black text-gray-500 uppercase tracking-wider mb-1">{contact.label}</div>
-                            <div className="text-sm font-bold text-[#1B3A6B]">{contact.value}</div>
-                        </a>
-                    ))}
+                        )
+                    )}
                 </div>
 
                 <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 mb-12 flex gap-4">
