@@ -19,23 +19,6 @@ export default function ProfilePage() {
                     </p>
                 </div>
 
-                {/* SNS 채널 섹션 */}
-                <div className="p-6 pb-2">
-                    <h2 className="text-[#1B3A6B] font-black text-lg flex items-center gap-2 mb-4 border-b pb-2">
-                        <span className="text-2xl">🔗</span> SNS & 공식 채널
-                    </h2>
-                    <div className="grid grid-cols-4 gap-4 px-2">
-                        {CANDIDATE_PROFILE.snsLinks.map((sns, i) => (
-                            <a key={i} href={sns.url} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group no-underline text-center">
-                                <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-sm mb-2 transition-transform group-hover:scale-110" style={{ backgroundColor: sns.bgColor }}>
-                                    <span className="text-2xl">{sns.emoji}</span>
-                                </div>
-                                <span className="text-xs font-bold text-gray-500 group-hover:text-[#1B3A6B]">{sns.label}</span>
-                            </a>
-                        ))}
-                    </div>
-                </div>
-
                 {/* 주요 이력 타임라인 */}
                 <div className="p-6">
                     <h2 className="text-[#1B3A6B] font-black text-lg flex items-center gap-2 mb-6 border-b pb-2">
