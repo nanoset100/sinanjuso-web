@@ -1,4 +1,4 @@
-import { CANDIDATE_PROFILE, ELECTION_INFO, POLICIES, KEY_POLICIES_8, OFFICIAL_PLEDGE } from '@/lib/static-data';
+import { CANDIDATE_PROFILE, ELECTION_INFO, POLICIES, KEY_POLICIES_8, OFFICIAL_PLEDGE, CAMP_CONTACT } from '@/lib/static-data';
 import ContactForm from '@/components/ContactForm';
 import PolicyGrid from '@/components/PolicyGrid';
 import Image from 'next/image';
@@ -78,9 +78,10 @@ export default function LandingPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {KEY_POLICIES_8.map((p) => (
-            <div
+            <Link
               key={p.id}
-              className="group rounded-2xl p-6 border-2 border-transparent hover:border-[#E8941A] hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              href={}
+              className="group rounded-2xl p-6 border-2 border-transparent hover:border-[#E8941A] hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block cursor-pointer"
               style={{ backgroundColor: p.badgeColor }}
             >
               <div className="text-4xl mb-3">{p.emoji}</div>
@@ -93,7 +94,8 @@ export default function LandingPage() {
               <h3 className="text-lg font-black text-[#1B3A6B] mb-2 break-keep">{p.title}</h3>
               <p className="text-sm font-bold text-[#E8941A] mb-3">{p.hook}</p>
               <p className="text-xs text-gray-600 leading-relaxed">{p.description}</p>
-            </div>
+              <span className="mt-3 inline-block text-xs font-bold" style={{ color: p.badgeTextColor }}>자세히 보기 →</span>
+            </Link>
           ))}
         </div>
       </section>
@@ -211,6 +213,23 @@ export default function LandingPage() {
               <ContactForm />
             </div>
           </div>
+
+          {/* 캠프 연락처 */}
+          <div className="mt-12 w-full max-w-2xl">
+            <div className="bg-white/10 backdrop-blur rounded-3xl p-8 text-center border border-white/20">
+              <p className="text-white font-black text-lg mb-6">📍 캠프 사무소</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
+                <a href="tel:0612054059" className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white font-bold px-6 py-3 rounded-2xl transition-all">
+                  📞 061-205-4059
+                </a>
+                <a href="mailto:ts9838@hanmail.net" className="flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white font-bold px-6 py-3 rounded-2xl transition-all">
+                  ✉️ ts9838@hanmail.net
+                </a>
+              </div>
+              <p className="text-blue-200 text-sm mt-4 font-medium">전남 신안군 압해읍 압해로 797-1</p>
+            </div>
+          </div>
+
         </div>
       </section>
 
