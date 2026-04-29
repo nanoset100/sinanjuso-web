@@ -248,7 +248,7 @@ export default function LandingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {/* App Store - 실제 올라간 상태 */}
               <a
-                href="https://apps.apple.com"
+                href="https://apps.apple.com/kr/app/%EA%B9%80%ED%83%9C%EC%84%B1%EA%B3%BC-%EC%8B%A0%EC%95%88/id6762446353"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-16 flex items-center justify-center gap-2 bg-[#1B3A6B] hover:bg-[#152d54] transition-colors rounded-2xl px-10 font-bold text-white sm:text-lg"
@@ -267,7 +267,7 @@ export default function LandingPage() {
       {/* Floating CTA */}
       <div className="fixed bottom-0 left-0 w-full z-50 p-4 sm:p-0 sm:bottom-8 sm:left-auto sm:right-8 sm:w-auto">
         <a
-          href="https://apps.apple.com"
+          href="https://apps.apple.com/kr/app/%EA%B9%80%ED%83%9C%EC%84%B1%EA%B3%BC-%EC%8B%A0%EC%95%88/id6762446353"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-3 w-full sm:w-auto h-16 sm:h-16 sm:px-10 bg-[#E8941A] hover:bg-[#d17a0f] text-white font-black text-lg sm:text-xl rounded-2xl sm:rounded-full shadow-2xl shadow-[#E8941A]/40 transition-[transform,background] active:scale-95 hover:-translate-y-1 no-underline border border-white/20"
