@@ -514,12 +514,12 @@ export const NEWS_ITEMS = [
 // ────────────────────────────────────────────────────────────
 export const CAMP_CONTACT = {
   contacts: [
-    { label: '전화', value: '061-XXX-XXXX', url: 'tel:06100000000', iconBgColor: '#E3F2FD' },
-    { label: '이메일', value: 'kimts@sinanjuso.com', url: 'mailto:kimts@sinanjuso.com', iconBgColor: '#E8F5E9' },
+    { label: '전화', value: '061-205-4059', url: 'tel:0612054059', iconBgColor: '#E3F2FD' },
+    { label: '이메일', value: 'ts9838@hanmail.net', url: 'mailto:ts9838@hanmail.net', iconBgColor: '#E8F5E9' },
     { label: '카카오톡 채널', value: '@김태성신안군수', url: 'https://pf.kakao.com/_placeholder', iconBgColor: '#FFF9C4' },
   ],
-  address: '전라남도 신안군 안좌면 김태성 선거캠프',
-  addressFull: '전라남도 신안군 안좌면 읍내리 — 캠프 사무소',
+  address: '전남 신안군 압해읍 압해로 797-1',
+  addressFull: '전남 신안군 압해읍 압해로 797-1 — 김태성 선거캠프',
   lat: 34.8353,
   lng: 126.1833,
 };
@@ -569,3 +569,4 @@ export const ELECTION_INFO = {
   type: '신안군수 선거',
   district: '전라남도 신안군',
 };
+          
