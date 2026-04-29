@@ -178,7 +178,7 @@ export default function LandingPage() {
             5월 집중 숏폼 콘텐츠 — 신안의 변화를 영상으로 확인하세요
           </p>
           <a
-            href="https://www.youtube.com/@김태성TV"
+            href="https://www.youtube.com/@TV-Kimtaesung"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-red-600 hover:bg-red-700 text-white font-black px-10 py-4 rounded-full text-lg transition-all hover:-translate-y-1 shadow-lg"
