@@ -40,52 +40,86 @@ export default async function PolicyDetailPage({
         </div>
       </div>
 
-      <div className="max-w-3xl mx-auto px-4 pt-12">
-        {/* 공약 내용 */}
-        <div className="bg-white rounded-3xl shadow-lg p-8 sm:p-12 mb-8">
-          <h2 className="text-xl font-black text-[#1B3A6B] mb-6 flex items-center gap-3">
+      <div className="max-w-3xl mx-auto px-4 pt-12 space-y-8">
+
+        {/* 추진 배경 */}
+        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 sm:p-10">
+          <h2 className="text-lg font-black text-[#1B3A6B] mb-4 flex items-center gap-3">
             <span className="w-1 h-6 bg-[#E8941A] rounded-full inline-block" />
-            공약 내용
+            추진 배경
           </h2>
-          <p className="text-gray-700 text-lg leading-relaxed break-keep">{policy.description}</p>
+          <p className="text-gray-700 text-base leading-relaxed break-keep">
+            {policy.background}
+          </p>
         </div>
 
-        {/* 이전 / 다음 공약 */}
-        <div className="flex gap-4 mb-12">
+        {/* 핵심 목표 */}
+        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 sm:p-10">
+          <h2 className="text-lg font-black text-[#1B3A6B] mb-5 flex items-center gap-3">
+            <span className="w-1 h-6 bg-[#1B3A6B] rounded-full inline-block" />
+            핵심 목표
+          </h2>
+          <ul className="space-y-3">
+            {policy.goals.map((goal: string, i: number) => (
+              <li key={i} className="flex items-start gap-3">
+                <span
+                  className="w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-black flex-shrink-0 mt-0.5"
+                  style={{ backgroundColor: policy.badgeTextColor }}
+                >
+                  {i + 1}
+                </span>
+                <span className="text-gray-700 text-base break-keep">{goal}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* 추진 로드맵 */}
+        <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 sm:p-10">
+          <h2 className="text-lg font-black text-[#1B3A6B] mb-6 flex items-center gap-3">
+            <span className="w-1 h-6 bg-[#E8941A] rounded-full inline-block" />
+            추진 로드맵
+          </h2>
+          <div className="space-y-4">
+            {policy.roadmap.map((r: { step: number; title: string; desc: string }) => (
+              <div key={r.step} className="flex gap-4 items-start">
+                <div
+                  className="w-10 h-10 rounded-2xl flex items-center justify-center text-white font-black text-sm flex-shrink-0"
+                  style={{ backgroundColor: policy.badgeTextColor }}
+                >
+                  {r.step}단계
+                </div>
+                <div className="flex-1 bg-gray-50 rounded-2xl p-4">
+                  <p className="font-black text-[#1B3A6B] mb-1">{r.title}</p>
+                  <p className="text-sm text-gray-600 break-keep">{r.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 이전 / 다음 */}
+        <div className="flex gap-4">
           {prev ? (
-            <Link
-              href={`/policy/${prev.id}`}
-              className="flex-1 bg-white rounded-2xl shadow p-5 hover:shadow-md transition-all border-2 border-transparent hover:border-[#1B3A6B] text-left"
-            >
+            <Link href={`/policy/${prev.id}`}
+              className="flex-1 bg-white rounded-2xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-all hover:border-[#1B3A6B] text-left">
               <span className="text-xs font-bold text-gray-400 block mb-1">◀ 이전 공약</span>
-              <span className="text-sm font-black text-[#1B3A6B] break-keep">
-                {prev.emoji} {prev.title}
-              </span>
+              <span className="text-sm font-black text-[#1B3A6B] break-keep">{prev.emoji} {prev.title}</span>
             </Link>
-          ) : (
-            <div className="flex-1" />
-          )}
+          ) : <div className="flex-1" />}
           {next ? (
-            <Link
-              href={`/policy/${next.id}`}
-              className="flex-1 bg-white rounded-2xl shadow p-5 hover:shadow-md transition-all border-2 border-transparent hover:border-[#1B3A6B] text-right"
-            >
+            <Link href={`/policy/${next.id}`}
+              className="flex-1 bg-white rounded-2xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-all hover:border-[#1B3A6B] text-right">
               <span className="text-xs font-bold text-gray-400 block mb-1">다음 공약 ▶</span>
-              <span className="text-sm font-black text-[#1B3A6B] break-keep">
-                {next.emoji} {next.title}
-              </span>
+              <span className="text-sm font-black text-[#1B3A6B] break-keep">{next.emoji} {next.title}</span>
             </Link>
-          ) : (
-            <div className="flex-1" />
-          )}
+          ) : <div className="flex-1" />}
         </div>
 
         {/* 돌아가기 */}
-        <div className="text-center">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 bg-[#1B3A6B] text-white font-black px-8 py-4 rounded-full hover:bg-[#2d5aa0] transition-all"
-          >
+        <div className="text-center pt-4">
+          <Link href="/"
+            className="inline-flex items-center gap-2 bg-[#1B3A6B] text-white font-black px-8 py-4 rounded-full hover:bg-[#2d5aa0] transition-all">
             ← 8대 핵심 공약 전체보기
           </Link>
         </div>
