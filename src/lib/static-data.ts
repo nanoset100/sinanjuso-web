@@ -1493,6 +1493,16 @@ export const REGIONAL_POLICIES = [
 // ────────────────────────────────────────────────────────────
 export const NEWS_ITEMS = [
   {
+    id: 'real_5',
+    title: '[6·3신안]혁신당 신안군수 후보 김태성…"군민 행복에 헌신"',
+    source: '뉴시스',
+    publishedAt: '2026년 4월 23일',
+    thumbnailEmoji: '🗞',
+    url: 'https://www.newsis.com/view/NISX20260423_0003156447',
+    category: '보도자료',
+    summary: '23일 조국혁신당 전남도당에 따르면 신안군수 추천관리위원회에서 예비후보로 김태성 전 육군 소장이 추천됐다.',
+  },
+  {
     id: 'real_4',
     title: '조국혁신당, 신안군수 후보 선출 경선 실시되나…김태성·정광호 후보, 입당 선언',
     source: '프레시안',
