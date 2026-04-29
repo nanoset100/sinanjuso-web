@@ -77,31 +77,60 @@ export default function RegionsPage() {
             <span className="text-5xl">{current.emoji}</span>
             <div>
               <h2 className="text-3xl sm:text-4xl font-black text-[#1B3A6B]">{current.name}</h2>
-              <p className="text-[#E8941A] font-bold mt-1">총 {current.pledges.length}개 공약</p>
+              <p className="text-[#E8941A] font-bold mt-1">총 {current.pledges.length}개 공약 분야</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {current.pledges.map((pledge, i) => (
+          <div className="flex flex-col gap-5">
+            {current.pledges.map((pledge: any, i: number) => (
               <div
                 key={i}
-                className="bg-white/80 backdrop-blur rounded-2xl p-5 flex items-start gap-4 hover:bg-white hover:shadow-md transition-all"
+                className="bg-white/90 backdrop-blur rounded-2xl p-6 hover:bg-white hover:shadow-md transition-all"
               >
-                <span className="w-8 h-8 rounded-full bg-[#1B3A6B] text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-0.5">
-                  {i + 1}
-                </span>
-                <div className="flex-1">
-                  <p className="font-bold text-gray-800 break-keep leading-snug">{pledge.title}</p>
-                  <span
-                    className="mt-2 inline-block text-xs font-black px-3 py-0.5 rounded-full"
-                    style={{
-                      backgroundColor: CATEGORY_COLORS[pledge.category] || '#F3F4F6',
-                      color: CATEGORY_TEXT[pledge.category] || '#374151',
-                    }}
-                  >
-                    {pledge.category}
+                {/* 제목 행 */}
+                <div className="flex items-start gap-4 mb-3">
+                  <span className="w-8 h-8 rounded-full bg-[#1B3A6B] text-white font-black text-sm flex items-center justify-center flex-shrink-0 mt-0.5">
+                    {i + 1}
                   </span>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 flex-wrap">
+                      <p className="font-black text-[#1B3A6B] text-lg break-keep leading-snug">{pledge.title}</p>
+                      <span
+                        className="text-xs font-black px-3 py-0.5 rounded-full flex-shrink-0"
+                        style={{
+                          backgroundColor: CATEGORY_COLORS[pledge.category] || '#F3F4F6',
+                          color: CATEGORY_TEXT[pledge.category] || '#374151',
+                        }}
+                      >
+                        {pledge.category}
+                      </span>
+                    </div>
+                  </div>
                 </div>
+
+                {/* 세부 항목 */}
+                {pledge.items && pledge.items.length > 0 && (
+                  <div className="ml-12 mb-3">
+                    <ul className="space-y-1">
+                      {pledge.items.map((item: string, j: number) => (
+                        <li key={j} className="flex items-start gap-2 text-gray-700 font-medium">
+                          <span className="text-[#E8941A] font-black mt-0.5 flex-shrink-0">-</span>
+                          <span className="break-keep leading-snug">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* 부연설명 */}
+                {pledge.description && (
+                  <div className="ml-12 mt-2 flex items-start gap-2">
+                    <span className="text-[#1B3A6B] font-black text-xs mt-0.5 flex-shrink-0">▶</span>
+                    <p className="text-gray-500 text-sm font-medium break-keep leading-snug italic">
+                      {pledge.description}
+                    </p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
