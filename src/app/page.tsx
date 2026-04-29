@@ -80,7 +80,7 @@ export default function LandingPage() {
           {KEY_POLICIES_8.map((p) => (
             <Link
               key={p.id}
-              href={}
+              href={`/policy/${p.id}`}
               className="group rounded-2xl p-6 border-2 border-transparent hover:border-[#E8941A] hover:shadow-xl transition-all duration-300 hover:-translate-y-1 block cursor-pointer"
               style={{ backgroundColor: p.badgeColor }}
             >

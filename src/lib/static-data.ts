@@ -569,4 +569,3 @@ export const ELECTION_INFO = {
   type: '신안군수 선거',
   district: '전라남도 신안군',
 };
-          
