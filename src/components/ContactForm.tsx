@@ -19,6 +19,7 @@ export default function ContactForm() {
         const payload: Record<string, string> = {
             name: formData.name,
             message: formData.message,
+            _cc: 'ts9838@hanmail.net',
         };
         if (formData.email.trim()) {
             payload.email = formData.email.trim();
