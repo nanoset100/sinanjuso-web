@@ -27,9 +27,9 @@ export default function Footer() {
                     <div>
                         <h4 className="mb-4 font-bold uppercase tracking-wider">캠프 사무실</h4>
                         <ul className="space-y-2 text-sm opacity-80">
-                            <li>주소: 전라남도 신안군</li>
-                            <li>이메일: campaign@kimtaesung.kr</li>
-                            <li>전화: 061-XXX-XXXX</li>
+                            <li>전남 신안군 압해읍 압해로 797-1</li>
+                            <li><a href="mailto:ts9838@hanmail.net" className="hover:text-[#E8941A] transition-colors">ts9838@hanmail.net</a></li>
+                            <li><a href="tel:0612054059" className="hover:text-[#E8941A] transition-colors">061-205-4059</a></li>
                         </ul>
                     </div>
                 </div>
