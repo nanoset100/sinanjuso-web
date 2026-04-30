@@ -15,7 +15,6 @@ export default async function PolicyDetailPage({
   const policy = KEY_POLICIES_8.find((p) => p.id === id);
   if (!policy) notFound();
 
-  const p = policy as typeof policy & { counter?: string[] };
   const idx = KEY_POLICIES_8.findIndex((p) => p.id === id);
   const prev = idx > 0 ? KEY_POLICIES_8[idx - 1] : null;
   const next = idx < KEY_POLICIES_8.length - 1 ? KEY_POLICIES_8[idx + 1] : null;
@@ -83,33 +82,6 @@ export default async function PolicyDetailPage({
           </ul>
         </div>
 
-        {/* 대응 전략 */}
-        {p.counter && p.counter.length > 0 && (
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 sm:p-10">
-            <h2 className="text-lg font-black text-[#1B3A6B] mb-5 flex items-center gap-3">
-              <span className="w-1 h-6 bg-red-400 rounded-full inline-block" />
-              대응 전략(Counter-Strategy)
-            </h2>
-            <ul className="space-y-4">
-              {p.counter.map((item: string, i: number) => {
-                const parts = item.split('→ 반박:');
-                return (
-                  <li key={i} className="bg-gray-50 rounded-2xl p-4 text-sm text-gray-700 break-keep leading-relaxed">
-                    {parts.length === 2 ? (
-                      <>
-                        <span className="font-bold text-red-600">{parts[0].trim()}</span>
-                        <span className="text-gray-500"> → 반박: </span>
-                        <span>{parts[1].trim()}</span>
-                      </>
-                    ) : (
-                      item
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        )}
 
         {/* 이전 / 다음 */}
         <div className="flex gap-4">
