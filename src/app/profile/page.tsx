@@ -9,7 +9,7 @@ export default function ProfilePage() {
                     {/* 얼굴 사진 */}
                     <div className="w-36 h-36 rounded-full mb-4 shadow-xl border-4 border-white/30 overflow-hidden bg-white">
                         <img
-                            src="/candidate-photo.jpg"
+                            src="/candidate-photo.png"
                             alt="김태성 후보"
                             className="w-full h-full object-cover object-top"
                         />
