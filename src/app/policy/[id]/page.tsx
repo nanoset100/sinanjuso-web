@@ -14,6 +14,7 @@ export default async function PolicyDetailPage({
   const { id } = await params;
   const policy = KEY_POLICIES_8.find((p) => p.id === id);
   if (!policy) notFound();
+  const p = policy;
 
   const idx = KEY_POLICIES_8.findIndex((p) => p.id === id);
   const prev = idx > 0 ? KEY_POLICIES_8[idx - 1] : null;
