@@ -9,7 +9,7 @@ export default function Header() {
       </div>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-black tracking-tight text-[#1B3A6B]">김태성과 신안</span>
+          <span className="text-xl font-black tracking-tight text-[#1B3A6B]">김태성과 신안사랑</span>
         </Link>
         <nav className="hidden space-x-6 md:flex">
           <Link href="/profile"    className="text-sm font-bold text-gray-700 transition-colors hover:text-[#E8941A]">프로필</Link>

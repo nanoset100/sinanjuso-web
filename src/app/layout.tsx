@@ -7,7 +7,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '김태성과 신안 - 신안군수 예비후보',
+  title: '김태성과 신안사랑 - 신안군수 예비후보',
   description: '신안의 미래를 함께 만드는 공식 캠프',
   // ✅ iOS Smart App Banner — SSR에서 렌더링되므로 Safari가 즉시 인식
   itunes: {
@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     'google-play-app': 'app-id=com.kimtaesung.sinanjuso',
   },
   openGraph: {
-    title: '김태성과 신안',
+    title: '김태성과 신안사랑',
     description: '신안군수 예비후보 김태성 공식 웹사이트',
     url: 'https://kimtaesung.kr',
-    siteName: '김태성과 신안',
+    siteName: '김태성과 신안사랑',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
     locale: 'ko_KR',
     type: 'website',
