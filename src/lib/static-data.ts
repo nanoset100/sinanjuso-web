@@ -1502,6 +1502,16 @@ export const REGIONAL_POLICIES = [
 // ────────────────────────────────────────────────────────────
 export const NEWS_ITEMS = [
   {
+    id: 'real_6',
+    title: '김태성 조국혁신당 신안군수 예비후보, "전국 최초의 5선? 반드시 저지"',
+    source: '호남타임즈',
+    publishedAt: '2026년 5월 2일',
+    thumbnailEmoji: '📰',
+    url: 'https://www.honamtimes.com/news/articleView.html?idxno=290327',
+    category: '보도자료',
+    summary: '"약무영 불패 5선 도전은 노욕·지욕 같은 군국" 신안군수 선거에서 복지울 공약과 필요한 업무로 규정하며 반드시 저지하겠다고 밝혔다.',
+  },
+  {
     id: 'real_5',
     title: '[6·3신안]혁신당 신안군수 후보 김태성…"군민 행복에 헌신"',
     source: '뉴시스',
