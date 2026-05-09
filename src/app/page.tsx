@@ -56,7 +56,7 @@ export default function LandingPage() {
         <div className="max-w-lg mx-auto">
           <div className="flex items-center justify-center gap-2 mb-2">
             <span className="text-xl">▶️</span>
-            <h2 className="text-xl font-black text-white tracking-tight">김태성 TV 최신 쇼츠</h2>
+            <h2 className="text-xl font-black text-white tracking-tight">김태성 신안사랑 최신 쇼츠</h2>
           </div>
           <p className="text-blue-300 text-sm font-bold text-center mb-8">가장 최근에 올라온 영상입니다</p>
 
