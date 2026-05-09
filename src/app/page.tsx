@@ -1,10 +1,14 @@
 import { CANDIDATE_PROFILE, ELECTION_INFO, POLICIES, KEY_POLICIES_8, OFFICIAL_PLEDGE, CAMP_CONTACT } from '@/lib/static-data';
+import { getLatestYouTubeVideos } from '@/lib/youtube';
 import ContactForm from '@/components/ContactForm';
 import PolicyGrid from '@/components/PolicyGrid';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function LandingPage() {
+const CHANNEL_ID = 'UCrQiupvI44kZZv9mSuVdKdg';
+
+export default async function LandingPage() {
+  const shorts = await getLatestYouTubeVideos(CHANNEL_ID, 2);
   return (
     <div className="relative min-h-screen bg-gray-50 overflow-hidden pb-24">
 
@@ -42,6 +46,60 @@ export default function LandingPage() {
           <p className="mt-6 max-w-2xl text-white/70 text-sm sm:text-base font-medium leading-relaxed">
             {CANDIDATE_PROFILE.allianceMessage}
           </p>
+        </div>
+      </section>
+
+      {/* ━━━ 1.5 최신 쇼츠 — 군정 비전 위 ━━━ */}
+      <section className="bg-[#152d54] py-14 px-4">
+        <div className="max-w-lg mx-auto">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <span className="text-xl">▶️</span>
+            <h2 className="text-xl font-black text-white tracking-tight">김태성 TV 최신 쇼츠</h2>
+          </div>
+          <p className="text-blue-300 text-sm font-bold text-center mb-8">가장 최근에 올라온 영상입니다</p>
+
+          {shorts.length > 0 ? (
+            <div className="grid grid-cols-2 gap-4">
+              {shorts.map((video) => (
+                <div key={video.id} className="rounded-2xl overflow-hidden shadow-2xl shadow-black/40 flex flex-col">
+                  <div className="relative w-full aspect-[9/16]">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.id}?rel=0`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  </div>
+                  <div className="bg-[#1B3A6B] px-3 py-2">
+                    <p className="text-white text-xs font-bold line-clamp-2 leading-snug">{video.title}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-8">
+              <a
+                href={`https://www.youtube.com/channel/${CHANNEL_ID}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-black px-8 py-3 rounded-full transition-all"
+              >
+                <span>▶️</span> 채널 바로가기
+              </a>
+            </div>
+          )}
+
+          <div className="text-center mt-6">
+            <a
+              href={`https://www.youtube.com/channel/${CHANNEL_ID}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-300 hover:text-white text-sm font-bold transition-colors underline underline-offset-4"
+            >
+              전체 영상 보기 →
+            </a>
+          </div>
         </div>
       </section>
 
