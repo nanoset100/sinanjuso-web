@@ -7,7 +7,6 @@ import Link from 'next/link';
 // 최신 쇼츠 업데이트 시 이 ID만 교체
 const SHORTS = [
   { id: '1QTAqxP71sk' },
-  { id: 'uz6qkrrPr6A' },
 ];
 
 export default function LandingPage() {
@@ -53,14 +52,14 @@ export default function LandingPage() {
 
       {/* ━━━ 1.5 최신 쇼츠 — 군정 비전 위 ━━━ */}
       <section className="bg-[#152d54] py-14 px-4">
-        <div className="max-w-lg mx-auto">
+        <div className="max-w-xs mx-auto">
           <div className="flex items-center justify-center gap-2 mb-2">
             <span className="text-xl">▶️</span>
             <h2 className="text-xl font-black text-white tracking-tight">김태성 신안사랑 최신 쇼츠</h2>
           </div>
           <p className="text-blue-300 text-sm font-bold text-center mb-8">가장 최근에 올라온 영상입니다</p>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div>
             {SHORTS.map((video) => (
               <div key={video.id} className="rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
                 <div className="relative w-full aspect-[9/16]">
