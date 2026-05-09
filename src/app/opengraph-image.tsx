@@ -48,10 +48,10 @@ export default function OGImage() {
         <div style={{ width: '80px', height: '5px', background: '#E8941A', borderRadius: '99px', margin: '28px 0' }} />
 
         {/* 슬로건 */}
-        <div style={{ fontSize: '36px', fontWeight: 700, color: 'rgba(147,197,253,1)', textAlign: 'center', lineHeight: 1.4 }}>
+        <div style={{ fontSize: '36px', fontWeight: 700, color: 'white', textAlign: 'center', lineHeight: 1.4 }}>
           소득 늘리고, 일자리 만들고,
         </div>
-        <div style={{ fontSize: '36px', fontWeight: 700, color: 'rgba(147,197,253,1)', marginTop: '6px' }}>
+        <div style={{ fontSize: '36px', fontWeight: 700, color: 'white', marginTop: '6px' }}>
           약속 지키는 군수
         </div>
 
