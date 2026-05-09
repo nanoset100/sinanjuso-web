@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     'google-play-app': 'app-id=com.kimtaesung.sinanjuso',
   },
   openGraph: {
-    title: '김태성과 신안사랑',
-    description: '신안군수 예비후보 김태성 공식 웹사이트',
+    title: '김태성과 신안사랑: 새 술은 새 부대에!',
+    description: '신안군수 예비후보 김태성 웹사이트',
     url: 'https://kimtaesung.kr',
     siteName: '김태성과 신안사랑',
 
