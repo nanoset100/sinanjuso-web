@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: '신안군수 예비후보 김태성 공식 웹사이트',
     url: 'https://kimtaesung.kr',
     siteName: '김태성과 신안사랑',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+
     locale: 'ko_KR',
     type: 'website',
   },
