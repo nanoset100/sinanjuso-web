@@ -89,7 +89,7 @@ export default function LandingPage() {
 
             {/* 전체 쇼츠 보기 — 큰 버튼 */}
             <a
-              href="https://www.youtube.com/@TV-Kimtaesung/shorts"
+              href="https://www.youtube.com/@kimtaeseong_shinan/shorts"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-between gap-3 bg-red-600 hover:bg-red-700 active:scale-95 text-white font-black px-6 py-5 rounded-2xl text-base transition-all shadow-lg shadow-red-900/40"
@@ -104,16 +104,6 @@ export default function LandingPage() {
               <span className="bg-white/20 text-white text-xs font-black px-3 py-1.5 rounded-full whitespace-nowrap">
                 총 11편
               </span>
-            </a>
-
-            {/* 채널 구독 버튼 */}
-            <a
-              href="https://www.youtube.com/@TV-Kimtaesung?sub_confirmation=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-6 py-4 rounded-2xl text-sm transition-all"
-            >
-              🔔 채널 구독하고 새 영상 알림받기
             </a>
           </div>
 
@@ -348,7 +338,7 @@ export default function LandingPage() {
           className="flex items-center justify-center gap-3 w-full sm:w-auto h-16 sm:h-16 sm:px-10 bg-[#E8941A] hover:bg-[#d17a0f] text-white font-black text-lg sm:text-xl rounded-2xl sm:rounded-full shadow-2xl shadow-[#E8941A]/40 transition-[transform,background] active:scale-95 hover:-translate-y-1 no-underline border border-white/20"
         >
           <span className="text-2xl">📱</span>
-          캠프 공식 앱 다운로드
+          김태성 앱 다운로드
         </a>
       </div>
 
