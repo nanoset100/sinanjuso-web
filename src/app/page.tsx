@@ -50,16 +50,19 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ━━━ 1.5 최신 쇼츠 — 군정 비전 위 ━━━ */}
+      {/* ━━━ 1.5 최신 쇼츠 + 전체 쇼츠 모아보기 ━━━ */}
       <section className="bg-[#152d54] py-14 px-4">
-        <div className="max-w-xs mx-auto">
+        <div className="max-w-lg mx-auto">
+
+          {/* 섹션 헤더 */}
           <div className="flex items-center justify-center gap-2 mb-2">
             <span className="text-xl">▶️</span>
             <h2 className="text-xl font-black text-white tracking-tight">김태성 신안사랑 최신 쇼츠</h2>
           </div>
           <p className="text-blue-300 text-sm font-bold text-center mb-8">가장 최근에 올라온 영상입니다</p>
 
-          <div>
+          {/* 최신 쇼츠 1편 */}
+          <div className="max-w-xs mx-auto">
             {SHORTS.map((video) => (
               <div key={video.id} className="rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
                 <div className="relative w-full aspect-[9/16]">
@@ -75,16 +78,45 @@ export default function LandingPage() {
             ))}
           </div>
 
-          <div className="text-center mt-6">
+          {/* 전체 쇼츠 모아보기 버튼 */}
+          <div className="mt-10 flex flex-col items-center gap-4">
+            {/* 구분선 */}
+            <div className="flex items-center gap-3 w-full">
+              <div className="flex-1 h-px bg-white/20" />
+              <span className="text-blue-300 text-xs font-bold whitespace-nowrap">더 많은 영상</span>
+              <div className="flex-1 h-px bg-white/20" />
+            </div>
+
+            {/* 전체 쇼츠 보기 — 큰 버튼 */}
             <a
-              href="https://www.youtube.com/channel/UCrQiupvI44kZZv9mSuVdKdg"
+              href="https://www.youtube.com/@TV-Kimtaesung/shorts"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-300 hover:text-white text-sm font-bold transition-colors underline underline-offset-4"
+              className="w-full flex items-center justify-between gap-3 bg-red-600 hover:bg-red-700 active:scale-95 text-white font-black px-6 py-5 rounded-2xl text-base transition-all shadow-lg shadow-red-900/40"
             >
-              전체 영상 보기 →
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">▶️</span>
+                <div className="text-left">
+                  <div className="text-base font-black">쇼츠 전편 모아보기</div>
+                  <div className="text-red-200 text-xs font-bold mt-0.5">유튜브에서 전체 영상 확인 →</div>
+                </div>
+              </div>
+              <span className="bg-white/20 text-white text-xs font-black px-3 py-1.5 rounded-full whitespace-nowrap">
+                총 11편
+              </span>
+            </a>
+
+            {/* 채널 구독 버튼 */}
+            <a
+              href="https://www.youtube.com/@TV-Kimtaesung?sub_confirmation=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-6 py-4 rounded-2xl text-sm transition-all"
+            >
+              🔔 채널 구독하고 새 영상 알림받기
             </a>
           </div>
+
         </div>
       </section>
 
