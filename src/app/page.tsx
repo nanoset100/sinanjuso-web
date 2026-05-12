@@ -51,7 +51,7 @@ export default function LandingPage() {
       </section>
 
       {/* ━━━ 1.5 최신 쇼츠 + 전체 쇼츠 모아보기 ━━━ */}
-      <section className="bg-[#152d54] py-14 px-4">
+      <section className="bg-[#152d54] pt-14 pb-20 px-4">
         <div className="max-w-lg mx-auto">
 
           {/* 섹션 헤더 */}
