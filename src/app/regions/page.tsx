@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { REGIONAL_POLICIES } from '@/lib/static-data';
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -33,6 +33,14 @@ const CATEGORY_TEXT: Record<string, string> = {
 export default function RegionsPage() {
   const [active, setActive] = useState(REGIONAL_POLICIES[0].id);
   const current = REGIONAL_POLICIES.find((r) => r.id === active)!;
+
+  useEffect(() => {
+    const hash = decodeURIComponent(window.location.hash.replace('#', ''));
+    if (hash) {
+      const matched = REGIONAL_POLICIES.find((r) => r.name === hash);
+      if (matched) setActive(matched.id);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 pt-8 pb-24">
