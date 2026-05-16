@@ -102,7 +102,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <span className="bg-white/20 text-white text-xs font-black px-3 py-1.5 rounded-full whitespace-nowrap">
-                총 11편
+                총 15편
               </span>
             </a>
           </div>
