@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 // 최신 쇼츠 업데이트 시 이 ID만 교체
 const SHORTS = [
-  { id: 'srJVYrixUtE' },
+  { id: 'sSt9AY5TjuU' },
 ];
 
 export default function LandingPage() {
@@ -298,8 +298,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ━━━ 앱 다운로드 + Floating CTA ━━━ */}
-      <section className="py-16 px-4">
+      {/* ━━━ 앱 다운로드 섹션 — 앱 출시 후 주석 해제 ━━━ */}
+      {/* <section className="py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <div className="bg-white rounded-[2rem] shadow-xl border border-gray-100 p-8 sm:p-12 text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#1B3A6B] to-[#E8941A]" />
@@ -311,7 +311,6 @@ export default function LandingPage() {
               가장 빠른 선거 소식과 맞춤형 정책을 앱으로 받아보세요
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* App Store - 실제 올라간 상태 */}
               <a
                 href="https://apps.apple.com/kr/app/%EA%B9%80%ED%83%9C%EC%84%B1%EA%B3%BC-%EC%8B%A0%EC%95%88/id6762446353"
                 target="_blank"
@@ -320,17 +319,16 @@ export default function LandingPage() {
               >
                 🍎 App Store 다운로드
               </a>
-              {/* Google Play - 심사중 */}
               <div className="h-16 flex items-center justify-center bg-gray-50 border-2 border-gray-100 rounded-2xl px-10 font-bold text-gray-400 sm:text-lg cursor-not-allowed">
                 Google Play (출시 예정)
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Floating CTA */}
-      <div className="fixed bottom-0 left-0 w-full z-50 p-4 sm:p-0 sm:bottom-8 sm:left-auto sm:right-8 sm:w-auto">
+      {/* Floating CTA — 앱 출시 후 SHOW_APP_CTA = true로 변경 */}
+      {/* <div className="fixed bottom-0 left-0 w-full z-50 p-4 sm:p-0 sm:bottom-8 sm:left-auto sm:right-8 sm:w-auto">
         <a
           href="https://apps.apple.com/kr/app/%EA%B9%80%ED%83%9C%EC%84%B1%EA%B3%BC-%EC%8B%A0%EC%95%88/id6762446353"
           target="_blank"
@@ -340,7 +338,7 @@ export default function LandingPage() {
           <span className="text-2xl">📱</span>
           김태성 앱 다운로드
         </a>
-      </div>
+      </div> */}
 
     </div>
   );

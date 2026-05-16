@@ -1509,6 +1509,16 @@ export const REGIONAL_POLICIES = [
 // ────────────────────────────────────────────────────────────
 export const NEWS_ITEMS = [
   {
+    id: 'real_7',
+    title: '고길호·최제순, 김태성 후보로 단일화 선언',
+    source: '무안신안뉴스',
+    publishedAt: '2026년 5월 15일',
+    thumbnailEmoji: '🤝',
+    url: 'http://www.msonews.co.kr/news/articleView.html?idxno=23215',
+    category: '보도자료',
+    summary: '"조건 없는 백의종군"…김태성 중심 \'신안 원팀\' 전격 출범. 고길호·최제순 예비후보가 직위를 포기하고 정책 단일화로 3자 통합을 선언하며 선거판에 파장을 일으켰다.',
+  },
+  {
     id: 'real_6',
     title: '김태성 조국혁신당 신안군수 예비후보, "전국 최초의 5선? 반드시 저지"',
     source: '호남타임즈',
