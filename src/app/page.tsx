@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 // 최신 쇼츠 업데이트 시 이 ID만 교체
 const SHORTS = [
-  { id: 'sSt9AY5TjuU' },
+  { id: 'CyqdGctK-Kg' },
 ];
 
 export default function LandingPage() {
