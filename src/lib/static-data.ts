@@ -1509,6 +1509,16 @@ export const REGIONAL_POLICIES = [
 // ────────────────────────────────────────────────────────────
 export const NEWS_ITEMS = [
   {
+    id: 'real_8',
+    title: "신안군수 여론조사 김태성 51.3%, 박우량 42.2%...'격차 9.1%'",
+    source: '그린뉴딜',
+    publishedAt: '2026년 5월 18일',
+    thumbnailEmoji: '📊',
+    url: 'https://www.gndnews.co.kr/news/articleView.html?idxno=274',
+    category: '여론조사',
+    summary: '한국사회여론연구소 조사 결과 김태성 후보 51.3%, 박우량 후보 42.2%로 격차 9.1%p. 고길호·최제순 후보 단일화 합류 이후 지지율 격차가 확대됐다.',
+  },
+  {
     id: 'real_7',
     title: '고길호·최제순, 김태성 후보로 단일화 선언',
     source: '무안신안뉴스',
