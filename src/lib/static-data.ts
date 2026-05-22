@@ -1509,6 +1509,16 @@ export const REGIONAL_POLICIES = [
 // ────────────────────────────────────────────────────────────
 export const NEWS_ITEMS = [
   {
+    id: 'real_9',
+    title: '정광호 "신안 바꿀 준비된 인물 김태성 지지"',
+    source: '쿠키뉴스',
+    publishedAt: '2026년 5월 22일',
+    thumbnailEmoji: '🤜',
+    url: 'https://www.kukinews.com/article/view/kuk202605220070',
+    category: '보도자료',
+    summary: '정광호 전 전남도의원이 22일 김태성 조국혁신당 신안군수 후보에 대한 공개 지지를 선언했다. "신안을 바꿀 준비된 인물"이라며 적극 지지 의사를 밝혔다.',
+  },
+  {
     id: 'real_8',
     title: "신안군수 여론조사 김태성 51.3%, 박우량 42.2%...'격차 9.1%'",
     source: '그린뉴딜',
