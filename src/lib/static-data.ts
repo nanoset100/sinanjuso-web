@@ -1509,6 +1509,16 @@ export const REGIONAL_POLICIES = [
 // ────────────────────────────────────────────────────────────
 export const NEWS_ITEMS = [
   {
+    id: 'real_10',
+    title: '무소속 고봉기 후보, 김태성 후보 지지 선언',
+    source: 'KNS뉴스통신',
+    publishedAt: '2026년 5월 24일',
+    thumbnailEmoji: '🙌',
+    url: 'https://www.kns.tv/news/articleView.html?idxno=1002289',
+    category: '보도자료',
+    summary: '신안군수 선거에 출마했던 무소속 고봉기 후보가 김태성 후보 지지를 선언했다. 전 도의원·전 군수에 이은 연속 단일화로 박우량 후보에 반대하는 정치 세력이 결집하고 있다.',
+  },
+  {
     id: 'real_9',
     title: '정광호 "신안 바꿀 준비된 인물 김태성 지지"',
     source: '쿠키뉴스',
