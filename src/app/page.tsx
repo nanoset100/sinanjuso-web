@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 // 최신 쇼츠 업데이트 시 이 ID만 교체
 const SHORTS = [
-  { id: 'SCg2TVjfk3Q' },
+  { id: 'qX3WJKSq0Ko' },
 ];
 
 export default function LandingPage() {
@@ -102,7 +102,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <span className="bg-white/20 text-white text-xs font-black px-3 py-1.5 rounded-full whitespace-nowrap">
-                총 22편
+                총 25편
               </span>
             </a>
           </div>
