@@ -137,7 +137,7 @@ export default function LandingPage() {
           <h2 className="text-4xl sm:text-5xl font-black text-[#1B3A6B]">8대 핵심 공약</h2>
           <div className="w-16 h-1.5 bg-[#E8941A] mx-auto mt-6 rounded-full" />
           <p className="mt-6 text-lg font-bold text-gray-500 break-keep">
-            군민의 삶에 바로 닿는 실천 공약입니다
+            군민의 삶에 바로 닿는 <span className="text-[#E8941A]">세부 실천 공약</span>입니다
           </p>
         </div>
 
@@ -173,7 +173,10 @@ export default function LandingPage() {
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-[#1B3A6B]">5대 공약</h2>
           <div className="w-16 h-1.5 bg-[#E8941A] mx-auto mt-6 rounded-full" />
-          <p className="mt-6 text-lg font-bold text-gray-500">탭하면 상세 추진 계획을 확인할 수 있습니다</p>
+          <p className="mt-4 text-base font-bold text-[#1B3A6B]/70 break-keep">
+            공식 선거 공약 — 8대 핵심공약의 상위 분류입니다
+          </p>
+          <p className="mt-2 text-base font-bold text-gray-500">탭하면 상세 추진 계획을 확인할 수 있습니다</p>
         </div>
         <PolicyGrid policies={POLICIES} />
       </section>
@@ -257,18 +260,6 @@ export default function LandingPage() {
       {/* ━━━ 8. D-Day + 주민 건의 폼 ━━━ */}
       <section className="py-24 sm:py-32 bg-[#1B3A6B] px-4">
         <div className="max-w-4xl mx-auto flex flex-col items-center">
-          <div className="text-center mb-16 px-4 w-full">
-            <div className="inline-block bg-[#E8941A] text-white font-black px-6 py-2 rounded-full mb-8 text-sm tracking-wider">
-              {ELECTION_INFO.title}
-            </div>
-            <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-white leading-tight mb-8">
-              D-{ELECTION_INFO.dDay}
-              <span className="text-blue-200 text-3xl sm:text-4xl mt-4 block leading-snug break-keep">
-                신안의 미래를 결정할 시간입니다
-              </span>
-            </h2>
-          </div>
-
           <div className="w-full max-w-2xl">
             <div className="text-center mb-6">
               <p className="text-white font-black text-xl mb-2">📬 응원 메시지 & 건의사항</p>
