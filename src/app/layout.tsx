@@ -7,14 +7,13 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '김태성과 신안사랑 - 신안군수 예비후보',
-  description: '신안의 미래를 함께 만드는 공식 캠프',
+  title: '신안 정책마당',
+  description: '군민이 제안하고, 군수가 직접 읽고, 신안이 바뀝니다',
   openGraph: {
-    title: '김태성과 신안사랑: 새 술은 새 부대에!',
-    description: '신안군수 예비후보 김태성 웹사이트',
+    title: '신안 정책마당',
+    description: '군민이 제안하고, 군수가 직접 읽고, 신안이 바뀝니다',
     url: 'https://sinanjuso-web.vercel.app',
-    siteName: '김태성과 신안사랑',
-
+    siteName: '신안 정책마당',
     locale: 'ko_KR',
     type: 'website',
   },
