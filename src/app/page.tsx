@@ -1,13 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
-// 현황 카드 데이터 (추후 DB 연결)
-const STATS = [
-  { label: '누적 제안', value: '0', unit: '건', icon: '💡', color: 'bg-blue-50 text-blue-700' },
-  { label: '군수가 읽은 제안', value: '0', unit: '건', icon: '👁️', color: 'bg-orange-50 text-orange-700' },
-  { label: '정책 반영', value: '0', unit: '건', icon: '✅', color: 'bg-green-50 text-green-700' },
-  { label: '이번 달 신규', value: '0', unit: '건', icon: '🆕', color: 'bg-purple-50 text-purple-700' },
-];
+import ProposalStats from '@/components/ProposalStats';
 
 // 공약 이행 현황 (정적 초기값)
 const PROMISE_STATUS = [
@@ -83,17 +76,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ━━━ 현황 카드 ━━━ */}
+      {/* ━━━ 현황 카드 (실시간 Firebase) ━━━ */}
       <section className="max-w-5xl mx-auto px-4 -mt-6 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {STATS.map((stat) => (
-            <div key={stat.label} className={`rounded-2xl p-4 shadow-sm border border-white/80 bg-white`}>
-              <div className="text-2xl mb-1">{stat.icon}</div>
-              <div className="text-2xl font-black text-gray-800">{stat.value}<span className="text-sm font-medium text-gray-500 ml-1">{stat.unit}</span></div>
-              <div className="text-xs text-gray-500 font-medium mt-0.5">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+        <ProposalStats />
       </section>
 
       <div className="max-w-5xl mx-auto px-4 py-12 space-y-10">
