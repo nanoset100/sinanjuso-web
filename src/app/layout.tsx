@@ -8,10 +8,10 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: '신안 정책마당',
-  description: '군민이 제안하고, 군수가 직접 읽고, 신안이 바뀝니다',
+  description: '군민이 제안하고, 군민이 함께하면, 신안이 바뀝니다',
   openGraph: {
     title: '신안 정책마당',
-    description: '군민이 제안하고, 군수가 직접 읽고, 신안이 바뀝니다',
+    description: '군민이 제안하고, 군민이 함께하면, 신안이 바뀝니다',
     url: 'https://sinanjuso-web.vercel.app',
     siteName: '신안 정책마당',
     locale: 'ko_KR',

@@ -24,7 +24,7 @@ export default function Header() {
           </div>
           <div className="flex flex-col leading-none">
             <span className="text-lg font-black tracking-tight text-[#1B3A6B]">신안 정책마당</span>
-            <span className="text-[10px] text-gray-400 font-medium hidden sm:block">군민이 제안하고, 군수가 직접 읽고, 신안이 바뀝니다</span>
+            <span className="text-[10px] text-gray-400 font-medium hidden sm:block">군민이 제안하고, 군민이 함께하면, 신안이 바뀝니다</span>
           </div>
         </Link>
 

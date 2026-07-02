@@ -38,7 +38,7 @@ export default function HomePage() {
             신안 정책마당
           </h1>
           <p className="text-lg text-blue-200 font-medium mb-8">
-            군민이 제안하고, 군수가 직접 읽고, 신안이 바뀝니다
+            군민이 제안하고, 군민이 함께하면, 신안이 바뀝니다
           </p>
 
           <Link

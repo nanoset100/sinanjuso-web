@@ -15,7 +15,7 @@ export default function Footer() {
               <h3 className="text-lg font-black">신안 정책마당</h3>
             </div>
             <p className="text-sm opacity-75 leading-relaxed">
-              군민이 제안하고, 군수가 직접 읽고,<br />신안이 바뀝니다.<br />
+              군민이 제안하고, 군민이 함께하면,<br />신안이 바뀝니다.<br />
               <span className="text-xs opacity-60 mt-1 block">
                 본 사이트는 공개된 정책 제안 채널이며 특정 정당·단체와 무관합니다.
               </span>
