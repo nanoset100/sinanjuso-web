@@ -24,9 +24,8 @@ export default function Footer() {
           <div>
             <h4 className="mb-3 font-bold text-sm uppercase tracking-wider opacity-60">메뉴</h4>
             <ul className="space-y-1.5 text-sm">
-              <li><Link href="/promise"      className="opacity-75 hover:opacity-100 hover:text-[#E8941A] transition-colors">공약 이행 현황</Link></li>
-              <li><Link href="/proposals"    className="opacity-75 hover:opacity-100 hover:text-[#E8941A] transition-colors">정책 제안</Link></li>
               <li><Link href="/participate"  className="opacity-75 hover:opacity-100 hover:text-[#E8941A] transition-colors">군민 참여 마당</Link></li>
+              <li><Link href="/proposals"    className="opacity-75 hover:opacity-100 hover:text-[#E8941A] transition-colors">정책 제안</Link></li>
               <li><Link href="/special-city" className="opacity-75 hover:opacity-100 hover:text-[#E8941A] transition-colors">전남광주특별시 소식</Link></li>
               <li><Link href="/message"      className="opacity-75 hover:opacity-100 hover:text-[#E8941A] transition-colors">군수 메시지</Link></li>
               <li><Link href="/about"        className="opacity-75 hover:opacity-100 hover:text-[#E8941A] transition-colors">소개</Link></li>

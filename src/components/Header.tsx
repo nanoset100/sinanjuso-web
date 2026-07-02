@@ -4,9 +4,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const NAV_ITEMS = [
-  { href: '/promise',      label: '공약 이행' },
-  { href: '/proposals',    label: '정책 제안' },
   { href: '/participate',  label: '군민 참여' },
+  { href: '/proposals',    label: '정책 제안' },
   { href: '/special-city', label: '특별시 소식' },
   { href: '/message',      label: '군수 메시지' },
   { href: '/about',        label: '소개' },
